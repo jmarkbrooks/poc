@@ -37,3 +37,11 @@ RESULT: {"serial_number":["device is already registered"]}
 2. Implement an administrative interface (using ActiveAdmin).
 3. Implement bulk sends on the API.
 4. Implement admin notifications.
+
+##
+
+Public URL: http://theorem-poc-stage.ztumpsdgre.us-east-1.elasticbeanstalk.com/devices
+
+If you wanted to use the API with his URL using cURL, you could do something like this:
+
+curl -H "Content-Type: application/json" -H "Authorization: XGHA-1HAB-Y76Z-29VW" -X POST -d '{ "device": { "serial_number": "12123344", "registration_date": "2019-03-06T09:00:00.000Z", "firmware_version": "1.00"} }' http://theorem-poc-stage.ztumpsdgre.us-east-1.elasticbeanstalk.com/devices

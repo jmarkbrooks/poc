@@ -8,5 +8,8 @@ RUN mkdir /app
 WORKDIR /app
 COPY . .
 RUN bundle install
+RUN bundle exec rails db:drop
+RUN bundle exec rails db:create
+RUN bundle exec rails db:migrate
 EXPOSE 3001
 CMD ["bash","-c","rm -f tmp/pids/server.pid && bundle exec rails s -p 3001 -b '0.0.0.0'"]
