@@ -1,0 +1,2 @@
+module MonoxideHelper
+end
