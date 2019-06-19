@@ -45,3 +45,21 @@ Public URL: http://theorem-poc-stage.ztumpsdgre.us-east-1.elasticbeanstalk.com/d
 If you wanted to use the API with his URL using cURL, you could do something like this:
 
 curl -H "Content-Type: application/json" -H "Authorization: XGHA-1HAB-Y76Z-29VW" -X POST -d '{ "device": { "serial_number": "12123344", "registration_date": "2019-03-06T09:00:00.000Z", "firmware_version": "1.00"} }' http://theorem-poc-stage.ztumpsdgre.us-east-1.elasticbeanstalk.com/devices
+
+## Things I would do differently
+
+1. Schedule this exercise for a time when I wasn't having to do my regular job and 100 other things.
+2. Use a template app, like this one maybe? https://github.com/rootstrap/rails_api_base
+3. Or maybe just use a purpose-designed template: https://github.com/matteolc/rails-api-template
+4. Keep it simple from the start -- I initially tried to do a more complex app and lost a lot of time before restarting.  And did I really need to do all sensors, when I could prove the concept with only one?
+5. For a POC, negotiate a true prototype rather than a baseline -- focus on visual delivery, don't worry about authentication or complex elements.
+6. Mock mock mock
+7. Redefine the problem in terms of Personas, Problems and Stories to make the requirements easier to understand and scope.
+
+## Things I feel I did right
+1. Use Docker.  It just makes it easier to build and deploy.
+2. Use Elastic Beanstalk.  It was up pretty fast.  The biggest time investment was installing the eb-cli client on my personal laptop.
+3. Focus on a pre-built crud library -- ActiveAdmin in this case, but I ran out of time to execute. :(
+4. Using cURL for testing -- this way I could verify the API both in local dev AND on the remote, without having to make the time investment for a full CI/CD or Runscope setup.
+5. Use Ruby on Rails -- I'm confident I got much farther on this than I would have otherwise, because even with mistakes, I was able to move faster.
+6. Negotiate away SOME complexity.  I understood correctly that notification was too big an ask, as was a more robust API authentication solution.
